@@ -61,4 +61,41 @@ Each equation would simply need to be multiplied by 7 to look at weekly constrai
 | Iron (mg)     | 0.2x<sub>1</sub> + 2.7x<sub>2</sub> + 2.71x<sub>3</sub> + 1.8x<sub>4</sub> + 0.26x<sub>5</sub>    | ≥            | 18        |
 | Potassium (mg)| 35x<sub>1</sub> + 0x<sub>2</sub> + 558x<sub>3</sub> + 138x<sub>4</sub> + 358x<sub>5</sub>        | ≥            | 4700      |
 
+### Solving the problem in Python using PuLP
+````Python
+#Define the variables
+WhiteRice = LpVariable("WhiteRice", 0, None)
+GroundBeef = LpVariable("GroundBeef", 0, None)
+Spinach = LpVariable("Spinach", 0, None)
+LargeEgg = LpVariable("LargeEgg", 0, None)
+Banana = LpVariable("Banana", 0, None)
 
+#Define the problem (In this case, we want to minimize cost)
+prob = LpProblem("Problem", LpMinimize)
+
+#Define the Contraints
+prob += 1 * WhiteRice    + 58 * GroundBeef    + 79 *  Spinach  + 142 * LargeEgg   + 1 * Banana <= 5000 #Sodium
+prob += 130 * WhiteRice  + 187.5 * GroundBeef + 23 * Spinach   + 144 * LargeEgg   + 89 * Banana >= 2000 #Energy
+prob += 2.69 * WhiteRice + 19.6 * GroundBeef  + 2.86 *Spinach  + 12.6 * LargeEgg + 1 * Banana >= 50 #Protein
+prob += 0 * WhiteRice    + 0 * GroundBeef     + 0 * Spinach    +  2 * LargeEgg    + 0 * Banana >= 20 #Vitamin D 
+prob += 10 * WhiteRice   + 12.5 * GroundBeef  + 99 * Spinach   +  56 * LargeEgg   + 5 * Banana >= 1300 # Calcium
+prob += 0.2 * WhiteRice  + 2.7 * GroundBeef   + 2.71 * Spinach +  1.8 * LargeEgg + 0.26 * Banana >= 18 #Iron
+prob += 35 * WhiteRice   + 0 * GroundBeef     + 558 * Spinach +  138 * LargeEgg  + 358 * Banana >= 4700 #Potassium
+
+#define the opjective function
+prob += 0.12 * WhiteRice + 1.05 * GroundBeef    + 0.7 *  Spinach  + 0.76 * LargeEgg   + 0.11 * Banana
+
+
+#Solve the problem
+status = prob.solve()
+print(f"Diet Problem")
+print(f"Optimization Status={LpStatus[status]}\n")
+
+# print the results
+for variable in prob.variables():
+    print(f"{variable.name} = {variable.varValue *100:.1f} grams")
+    
+print(f"\nDaily Cost = ${value(prob.objective):.2f}")
+print(f"Weekly Cost = ${7 * value(prob.objective):.2f}")
+print(f"")
+````
