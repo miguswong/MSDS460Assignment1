@@ -1,0 +1,11 @@
+Diet Problem
+status=Optimal
+
+Banana = 0.0 grams
+GroundBeef = 0.0 grams
+LargeEgg = 1000.0 grams
+Spinach = 716.8 grams
+WhiteRice = 304.0 grams
+
+Daily Cost = $12.98
+Weekly Cost = $90.88
