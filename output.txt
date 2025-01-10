@@ -9,3 +9,62 @@ WhiteRice = 304.0 grams
 
 Daily Cost = $12.98
 Weekly Cost = $90.88
+
+
+Diet Problem
+Optimization Status=Optimal
+
+Banana = 200.0 grams
+GroundBeef = 200.0 grams
+LargeEgg = 1000.0 grams
+Spinach = 681.8 grams
+WhiteRice = 300.0 grams
+
+Daily Cost = $15.05
+Weekly Cost = $105.37
+
+
+Banana: (200.0 grams)
+    Sodium: 2.00
+    Energy: 178.00
+    Protein: 2.00
+    Vitamin d: 0.00
+    Calcium: 10.00
+    Iron: 0.52
+    Potassium: 716.00
+
+GroundBeef: (200.0 grams)
+    Sodium: 116.00
+    Energy: 375.00
+    Protein: 39.20
+    Vitamin d: 0.00
+    Calcium: 25.00
+    Iron: 5.40
+    Potassium: 0.00
+
+LargeEgg: (1000.0 grams)
+    Sodium: 1420.00
+    Energy: 1440.00
+    Protein: 126.00
+    Vitamin d: 20.00
+    Calcium: 560.00
+    Iron: 18.00
+    Potassium: 1380.00
+
+Spinach: (681.8 grams)
+    Sodium: 538.64
+    Energy: 156.82
+    Protein: 19.50
+    Vitamin d: 0.00
+    Calcium: 675.00
+    Iron: 18.48
+    Potassium: 3804.55
+
+WhiteRice: (300.0 grams)
+    Sodium: 3.00
+    Energy: 390.00
+    Protein: 8.07
+    Vitamin d: 0.00
+    Calcium: 30.00
+    Iron: 0.60
+    Potassium: 105.00
